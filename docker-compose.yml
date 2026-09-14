@@ -1,0 +1,16 @@
+services:
+  db:
+    image: mysql:8.4
+    container_name: gamelog-mysql
+    environment:
+      MYSQL_DATABASE: gamelog
+      MYSQL_USER: gamelog
+      MYSQL_PASSWORD: gamelog
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - gamelog-db:/var/lib/mysql
+
+volumes:
+  gamelog-db:
